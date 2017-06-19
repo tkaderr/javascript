@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>All the Animals</h1><hr>
+    <a href="/new">New Animal</a>
+    <table style="width:100%">
+      <tr>
+        <th>Animal Name</th>
+        <th>Actions</th>
+      </tr>
+      <tr>
+        <% for (var i in animals) { %>
+        <td><a href="/<%=animals[i]._id%>"><%= animals[i].name %></a></td>
+        <td><a href="/edit/<%=animals[i]._id%>">Edit</a>&nbsp;<a href="/destroy/<%=animals[i]._id%>">Delete</a></td>
+      <% } %>
+      </tr>
+    </table>
+  </body>
+</html>

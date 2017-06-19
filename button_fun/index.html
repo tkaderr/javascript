@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+    $(document).ready(function() {
+
+      $(document).on("click", "someButton", function(){
+        $(this).toggleClass('red');
+      });
+
+    });
+    </script>
+    
+    <style media="screen">
+      #someButton {
+        background-color: blue;
+      }
+      .red{
+        background-color: red;
+      }
+      .blue{
+        background-color: blue;
+      }
+    </style>
+
+  </head>
+  <body>
+      <button class = "blue" id="someButton">This is Some Button</button>
+  </body>
+</html>
