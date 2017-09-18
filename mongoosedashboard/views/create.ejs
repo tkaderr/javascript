@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Index</title>
+    <script src="/jquery/dist/jquery.js"></script>
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css"/>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Create Page</h1>
+
+      <% if(typeof errors !== 'undefined') {
+        for(var i=0; i<errors.length; i++){%>
+          <p><%= errors[i] %> </p>
+      <% }} %>
+
+      <form class="" action="/mongooses" method="post">
+        <div class="form-group">
+          <label for="name">Bird name:</label>
+          <input type="text" name="name" value="" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="color">Bird color:</label>
+          <input type="text" name="color" value="" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+
+      </form>
+    </div>
+
+  </body>
+</html>

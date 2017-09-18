@@ -1,0 +1,9 @@
+<p>
+  Please enter your name to join!
+</p>
+
+<form #loginForm = 'ngForm' (submit)='login(loginForm)'>
+<label for="username">Username:</label>
+<input type="text" name="username" id = 'username' required minlength = '4' #username = 'ngModel' [(ngModel)]="user.username"><br>
+<input type="submit" [disabled] = '!loginForm.valid'>
+</form>

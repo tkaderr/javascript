@@ -1,0 +1,18 @@
+
+
+Login:
+<form #logForm='ngForm'>
+  <input type="text" name="username" value="" [(ngModel)]="user.username"
+  required 
+  minlength = "4"
+  #username = 'ngModel'
+  >
+  <input type="submit" value="Login" [disabled]="!logForm.valid">
+
+
+  <div class="red" *ngIf='username.errors && (username.touched || logForm.submitted)'>
+      <p *ngIf='username.errors.required'>username is required</p>
+      <p *ngIf='username.errors.minlength'>username must contain at least 4 characters.</p>
+  </div>
+
+</form>

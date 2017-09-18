@@ -1,0 +1,7 @@
+
+<p *ngIf = 'key'>
+<a [routerLink] = "['/dashboard']"> Dashboard </a> |
+<a [routerLink] = "['/logout']" (click)="logout()"> Logout </a>
+</p>
+
+<router-outlet></router-outlet>
