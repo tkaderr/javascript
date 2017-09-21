@@ -1,0 +1,24 @@
+
+<p>
+<a [routerLink] = "['/']"> Back </a>
+</p>
+
+<h4>Create a New Mongo:</h4>
+
+
+    <form #formMongo = 'ngForm' (submit)='create(formMongo)'>
+      <label for="name">Name:</label>
+      <input type="text" name="name" id = "name" value="" 
+      required
+      minlength = 3
+      [(ngModel)] = 'mongo.name' 
+      #name = 'ngModel'><br>
+       <div *ngIf='name.errors && (name.touched || formMongo.submitted)'>
+          <p id = "red" *ngIf = "name.errors?.required">* Name is required</p><br>
+          <p id = "red" *ngIf = "name.errors?.minlength">* Name must be at least 3 characters long</p>
+      </div>
+
+      <button type="submit" [disabled] = "!formMongo.form.valid" name="submit" value="Add Mongo">Add Mongo </button>
+
+    </form>
+  

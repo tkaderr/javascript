@@ -1,0 +1,24 @@
+<p [ngStyle]="{
+  'text-align': 'right'
+}">
+<a [routerLink] = "['/create']"> Create a new Mongo </a>
+</p>
+
+<h1 [ngStyle]="{
+  'text-align': 'center'
+}">Mongoose Dashboard</h1>
+
+<table>
+<thead>
+  <th>Name</th>
+  <th>Action</th>
+  </thead>
+<tbody>
+  <tr *ngFor = "let mongo of mongos">
+    <td><a [routerLink]="['/mongooses',mongo._id]">{{mongo.name}}</a></td>
+    <td> <button (click)="deleteMongoose(mongo._id)">Delete</button></td>
+  </tr>
+</tbody>
+</table>
+
+

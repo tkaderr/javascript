@@ -1,0 +1,37 @@
+<p id = "link">
+  <a [routerLink] = "['/dashboard']"> Go to Polls </a> 
+</p>
+<div class = "container" *ngIf = "survey">
+  <p> <b>  {{survey[0].question}} </b> </p>
+  <small> Click the Vote button to choose one. </small>
+
+  <table >
+    <thead>
+      <th> Option </th>
+      <th> Current Count of Votes </th>
+      <th> Action </th>
+   </thead>
+  <tbody >
+    <tr>
+      <td> {{survey[0].option1.name}} </td>
+      <td> {{survey[0].option1.votes}} </td>
+      <td> <button type="button" (click) = "voteUp('option1')"class = "waves-effect waves-light btn green">Vote</button> </td>
+    </tr>
+    <tr>
+      <td> {{survey[0].option2.name}} </td>
+      <td> {{survey[0].option2.votes}} </td>
+      <td> <button type="button" (click) = "voteUp('option2')" class = "waves-effect waves-light btn green">Vote</button> </td>
+    </tr>
+    <tr>
+      <td> {{survey[0].option3.name}} </td>
+      <td> {{survey[0].option3.votes}} </td>
+      <td> <button type="button" (click) = "voteUp('option3')" class = "waves-effect waves-light btn green">Vote</button> </td>
+    </tr>
+    <tr>
+      <td> {{survey[0].option4.name}} </td>
+      <td> {{survey[0].option4.votes}} </td>
+      <td> <button type="button"  (click) = "voteUp('option4')" class = "waves-effect waves-light btn green">Vote</button> </td>
+    </tr>
+  </tbody>
+  </table>
+</div>

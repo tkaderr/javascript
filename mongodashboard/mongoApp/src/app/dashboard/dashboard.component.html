@@ -1,0 +1,28 @@
+<p>
+<a [routerLink] = "['/create']"> Create a new Poll </a> |
+<a [routerLink] = "['/logout']" (click)="logout()"> Logout </a>
+</p>
+
+
+<div class = "row">
+  <h3 >Current Polls:</h3>
+  <input id = "search" name = "search" class  = "input-field col s4 offset-s8"type="text" [(ngModel)] = 'search' placeholder="Search">
+</div>
+<div *ngIf = "surveys">
+  <table>
+  <thead>
+    <th>Name</th>
+    <th>Survey Question</th>
+    <th>Date Posted</th>
+    <th>Action</th>
+  </thead>
+  <tbody>
+    <tr *ngFor = "let survey of surveys">
+      <td> {{survey._user.username}} </td>
+      <td> <a [routerLink] = "['/poll', survey._id]"> {{survey.question}}</a></td>
+      <td> {{survey.createdAt | date:'longDate'}}</td>
+      <td *ngIf = "key === survey._user.username"> <a (click) = "deleteSurvey(survey._id)">Delete</a></td>
+    </tr>
+  </tbody>
+</table>
+</div>
