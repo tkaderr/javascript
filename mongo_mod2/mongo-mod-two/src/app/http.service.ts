@@ -7,11 +7,19 @@ export class HttpService {
 
   constructor(private _http: Http) { }
 
-  createMongo(mongo) {
-    console.log("im inside th createMongo of service:", mongo)
-    return this._http.post('/api/mongooses/create', mongo)
-    .map( data => data.json() )
+  createMong(mongo) {
+    console.log("im inside th createMongo of serviceddd:", mongo);
+    return this._http.post('api/mongooses/delete', {id: 3})
+    .map( data => data.json(),
+    err => console.log("Got an error", err) )
    
+  }
+
+  createMongo(m){
+    console.log("SEcond version of request", m);
+    return this._http.post('api/mongooses/create', m)
+    .map(data => data.json(),
+      err => console.log("ERror", err))
   }
 
   retrieveMongos(){

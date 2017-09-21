@@ -22,11 +22,15 @@ create(form){
   console.log("this is the data:,",this.mongo);
   console.log("this is form:",form)
   console.log("submitted");
-    this._httpService.createMongo(JSON.stringify(this.mongo))
-    .subscribe( (params)=> console.log("Inside service creatMongo params:", params) )
+    this._httpService.createMongo(this.mongo).subscribe(
+      data => console.log("Got the data", data),
+      err => console.log("component has error", err)
+      
+    )
+   // .subscribe( (params)=> console.log("Inside service creatMongo params:", params) )
     // .then(data => {console.log("in create survey",data);})
     // .catch(err => {console.log("error in create survey", err);});
-    form.resetForm();
+    // form.resetForm();
     this.router.navigate(['/']);
   }
   

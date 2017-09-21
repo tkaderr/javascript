@@ -2,17 +2,20 @@ var mongoose = require('../controllers/mongoose.js');
 
 module.exports = function (app){
     console.log("in routes");
-    //show all mongooses
-    app.get('/api/mongooses', function (req, res){
-        console.log("in get req")
-        mongoose.show(req, res);
-    })
-
+   
     //create mongo
     app.post('/api/mongooses/create', function (req, res){
         console.log("in routes.js post create")
         mongoose.create(req, res);
     })
+
+ //show all mongooses
+    app.get('/api/mongooses', function (req, res){
+        console.log("in get req")
+        mongoose.show(req, res);
+    })
+
+    
 
     //delete mongo
     app.post('/api/mongooses/delete', function(req, res){
